@@ -1,10 +1,10 @@
 # 项目需求与设计 Skill
 
-## 主文档位置
+## 技能入口与维护位置
 
-本技能的主文档目录为 `/Users/farmerli/projects/local/project-design-skill`，后续修改和校验均以此目录为准；技能入口为 [SKILL.md](SKILL.md)。原工作区的 `work/project-design-skill` 已迁移，不再维护或重建。
+技能入口为当前技能包根目录的 [SKILL.md](SKILL.md)，本文中的文件链接均相对于当前包。维护源码时使用实际源码目录，检查已安装技能时使用实际安装目录；二者均与被分析项目的业务材料位置分开。
 
-`reference-review.md` 记录参考原则的取舍；随迁移保留的 `source-manifest.json` 和 `validation-results.json` 是历史快照，其中哈希、行数及验证结果不代表当前状态。最新重构与验证说明见 [VALIDATION.md](VALIDATION.md)。
+保留的 `source-manifest.json` 是历史文件哈希快照，不代表当前文件清单或验证结果，不用于安装完整性校验。
 
 面向研发管理者，从新项目想法、已有实现或需求变化出发，按需探索需求、验证架构、设计模型，并形成可交付研发和测试的用户故事、验收条件与任务计划。
 
@@ -25,33 +25,61 @@
 |---|---|
 | [SKILL.md](SKILL.md) | 描述技能用途、输入产出，以及什么时候使用什么能力 |
 | `references/` | 具体分析方法、方案适配和必要的工作约定 |
-| 项目根目录的 `PROJECT_CONTEXT.md` | 需求管理系统、文档、代码及分析产物的位置与来源约定 |
+| 本地 `项目上下文.md` 或远端“项目上下文”章节 | 需求管理系统、文档、代码及分析产物的位置与来源约定 |
 | 被分析项目的文档 | 业务事实、需求、设计、有效决策与交接状态 |
 
 本技能不附带 AGENTS.md 接入模板，也不要求用户修改项目 AGENTS.md。项目已有指令按宿主规则正常生效，不由本技能替换。
 
+## 在项目中引入
+
+GitHub 仓库：[FarmerLi/project-design-skill](https://github.com/FarmerLi/project-design-skill)。技能名称为 `project-design`，安装目录也使用这个名称。
+
+将 [安装与更新指引](安装与更新.md) 交给 Agent 执行。该文档包含项目内安装、个人全局安装、版本校验、更新与恢复步骤，直接下载技能文件，无需 Git 子模块或克隆仓库。
+
+安装时可直接告诉 Agent：
+
+```text
+请读取 https://github.com/FarmerLi/project-design-skill 仓库中的《安装与更新.md》，按指引将 project-design 安装到当前项目，并完成安装校验。
+```
+
+更新时：
+
+```text
+请读取 https://github.com/FarmerLi/project-design-skill 仓库中的《安装与更新.md》，按指引将当前项目中的 project-design 更新到最新版本，保留更新前的备份并报告结果。
+```
+
+默认安装到当前项目的 `.agents/skills/project-design/`；需要个人全局安装时，在请求中明确说明。引入本技能无需修改项目的 `AGENTS.md`。
+
 ## 使用
 
-将整个技能包放到可访问的位置，在会话中指定实际入口：
+在需要分析的项目中打开 Codex；技能已被发现时，可以在会话中使用：
 
-> 请读取 `/实际位置/project-design/SKILL.md`，帮我分析这个项目。本轮只澄清目标：……
+```text
+$project-design 帮我分析当前项目。本轮先澄清目标、用户和范围，已有资料位于……
+```
 
-如果宿主已经发现本技能，可以使用 `$project-design`。按技能目录安装时，目录名使用 `project-design`，并保留 references 和 agents 的相对位置。
+也可以明确指定实际入口，例如项目内安装后：
 
-提供已有项目或资料时，也说明实际位置。分析产物默认保存到被分析项目的 `docs/project-analysis/`，可指定其他目录；不要把业务资料写入技能包。
+> 请读取当前项目的 `.agents/skills/project-design/SKILL.md`，帮我分析这个项目。本轮只澄清目标：……
+
+安装在其他位置时，将入口替换为实际路径，例如 `/实际位置/project-design/SKILL.md`。
+
+提供已有项目或资料时，也说明实际位置。首次持续分析可要求助手按已知资料建立项目配置，具体内容见下节。有本地项目目录时，分析草稿默认保存到该项目的 `docs/project-analysis/`；纯远端项目可直接使用已授权页面，不要求建立本地仓库或副本。不要把业务资料写入技能包。
 
 ## 项目上下文文件
 
-用被分析项目根目录的 `PROJECT_CONTEXT.md` 记录必要的稳定信息：
+有本地项目目录时，用根目录的 `项目上下文.md` 记录必要的稳定信息；纯远端项目可使用已授权项目页面的“项目上下文”章节或已有配置页：
 
 - 需求管理系统名称、项目链接、空间／项目 ID 和需求定位方式；
 - 业务文档、设计文档与代码的位置；
 - 分析产物目录，以及概览、决策和交接文件的实际位置；
 - 需求状态、详细规则和当前实现分别以哪些来源为依据。
 
-首次持续分析时，助手根据已知资料从 [模板](assets/project-context.template.md) 建立文件；也可以手动复制并填写。未知项保留待核实，无需一次填完全部信息；已有等价配置可以沿用。
+首次持续分析时，助手根据已知资料从 [模板](assets/项目上下文模板.md) 在适用且已授权的位置建立配置；也可以手动复制并填写。未知项保留待核实，无需一次填完全部信息；已有等价配置可以沿用。
 
-该文件记录“资源在哪里”，不重复保存需求正文、工作进展或业务决策。使用规则见 [项目上下文配置](references/shared/project-context.md)。
+配置记录资源位置、任务与文档维护规则，不重复保存需求正文、工作进展或业务决策。使用规则见 [项目上下文配置](references/shared/project-context.md)。
+
+所有新建分析产物使用中文文件名，例如 `项目概览.md`、`决策记录.md`、`交接记录.md`、`01-需求探索与澄清.md`、`02-技术架构探索与验证.md`、`03-领域与数据模型探索设计.md`、`04-需求细化与交付推进.md` 和 `用户故事-001.md`。独立图源、图片及表格等导出文件也使用中文名称，保留实际格式的扩展名。完整约定见 [工作与交接契约](references/shared/working-contract.md#工作目录与最小材料)。
 
 ## 能力
 
@@ -76,7 +104,7 @@ references/
   shared/readiness.md           按交接用途检查充分性及证据
   shared/design-input.md        设计输入索引、双向追溯与变更传播
   examples/analysis-slices.md   跨系统、统计与无状态 SDK 的分析示例
-assets/project-context.template.md 项目上下文模板
+assets/项目上下文模板.md 项目上下文模板
 agents/openai.yaml               技能展示与调用信息
 ```
 
@@ -105,7 +133,9 @@ agents/openai.yaml               技能展示与调用信息
 
 持续分析通过项目文档保存有效结论，而不依赖聊天历史完整保留。恢复时可以说：
 
-> 请使用项目需求与设计技能。项目位于……，先读 PROJECT_CONTEXT.md，再依据当前概览和交接继续下一项工作。
+> 请使用项目需求与设计技能。项目位于……，先读 `项目上下文.md`，再依据当前概览和交接继续下一项工作。
+
+纯远端项目提供实际页面或交接链接，先读取其中的“项目上下文”及有效材料即可，不要求提供本地项目路径。
 
 [现状与恢复方法](references/entry/context.md)说明读取顺序，[工作约定](references/shared/working-contract.md)说明状态和交接内容。普通一次性咨询不要求建立全套文档。
 
@@ -117,8 +147,8 @@ agents/openai.yaml               技能展示与调用信息
 
 ## 验证与来源
 
-检查范围见 [VALIDATION.md](VALIDATION.md)。格式与引用检查不代表真实访谈效果或第三方模型兼容性已验证。
+维护时检查技能格式、UI 元数据，以及包内 Markdown 的本地文件引用和内部锚点；安装时按 [安装与更新指引](安装与更新.md#安装校验) 检查解压内容、安装记录与实际位置。验证报告应说明实际版本、执行范围和未执行项；格式、引用和场景推演不代表真实访谈效果、独立模型行为或第三方平台兼容性已验证。
 
-本包独立编写。历史参考见 [reference-review.md](reference-review.md)；本次按用户指定重新查阅 [AI 需求探索与确认提示词 V9.0](https://github.com/sharptoolbox/ontology-driven-dev/blob/main/references/AI需求探索与确认提示词V9.0.md) 的核心工作原则，吸收先草拟再澄清、区分依据与建议、分批处理关键问题及维护有效结论的方法。相关规则落在 [工作契约](references/shared/working-contract.md#对话与范围控制)，适用于四个阶段。
+本包独立编写，方法参考包括 [AI 需求探索与确认提示词 V9.0](https://github.com/sharptoolbox/ontology-driven-dev/blob/main/references/AI需求探索与确认提示词V9.0.md)。当前 [工作契约](references/shared/working-contract.md#对话与范围控制) 保留先草拟再澄清、区分依据与建议、分批处理关键问题及维护有效结论的方法，适用于四个阶段；上游资料不作为本包的运行依赖。
 
-未引入专属模型、单体同步限制、固定 UI、产物数量和逐阶段强制确认；没有依据时不强行推荐业务政策，有业务价值的交互要求予以保留。具体吸收与排除理由见 [参考取舍记录](reference-review.md)。
+未引入专属模型、单体同步限制、固定 UI、产物数量和逐阶段强制确认；没有依据时不强行推荐业务政策，有业务价值的交互要求予以保留。

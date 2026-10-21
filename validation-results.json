@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-21",
+  "skill_format": "passed",
+  "registered_skill_count": 1,
+  "reference_count": 22,
+  "missing_links": [],
+  "outside_package_links": [],
+  "unreachable_references": [],
+  "entry_lines": 56,
+  "specialized_seven_model_mapping_present": false,
+  "aggregation_example": {
+    "naive_join": [
+      300,
+      120
+    ],
+    "correct_totals": [
+      100,
+      60
+    ],
+    "verification": "in-memory SQLite"
+  },
+  "behavioral_validation": "semantic desktop review only; no independent agent or live interview",
+  "final_link_check": "passed",
+  "adapter_specific_residue_check": "passed",
+  "semantic_desktop_cases": 17,
+  "differences_from_previous_manifest": {
+    "added": [
+      "references/examples/analysis-slices.md",
+      "references/integrations/document-maintenance.md",
+      "references/integrations/task-tracking.md",
+      "references/shared/analysis-spec.md",
+      "references/shared/design-input.md",
+      "references/shared/readiness.md",
+      "references/stages/collaboration.md"
+    ],
+    "modified": [
+      "README.md",
+      "SKILL.md",
+      "VALIDATION.md",
+      "assets/project-context.template.md",
+      "references/adapters/catalog.md",
+      "references/adapters/ontology.md",
+      "references/changes/impact.md",
+      "references/entry/context.md",
+      "references/selection/modeling.md",
+      "references/shared/project-context.md",
+      "references/shared/working-contract.md",
+      "references/stages/delivery.md",
+      "references/stages/detail.md",
+      "references/stages/outline.md"
+    ],
+    "removed": [
+      "references/adapters/ontology-v9.md"
+    ]
+  },
+  "manifest_comparison_note": "Previous manifest predates some files already present at the start of this task; its differences are not the change list for this turn.",
+  "changes_this_turn": {
+    "added": [
+      "references/examples/analysis-slices.md",
+      "references/shared/analysis-spec.md",
+      "references/shared/design-input.md",
+      "references/shared/readiness.md",
+      "references/stages/collaboration.md"
+    ],
+    "modified": [
+      "README.md",
+      "SKILL.md",
+      "VALIDATION.md",
+      "references/adapters/catalog.md",
+      "references/adapters/ontology.md",
+      "references/changes/impact.md",
+      "references/selection/modeling.md",
+      "references/shared/working-contract.md",
+      "references/stages/delivery.md",
+      "references/stages/detail.md",
+      "references/stages/outline.md"
+    ],
+    "removed": [
+      "references/adapters/ontology-v9.md"
+    ]
+  }
+}

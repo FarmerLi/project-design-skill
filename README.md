@@ -1,14 +1,23 @@
-# 项目需求与设计 Skill · 0.4
+# 项目需求与设计 Skill
 
 ## 主文档位置
 
 本技能的主文档目录为 `/Users/farmerli/projects/local/project-design-skill`，后续修改和校验均以此目录为准；技能入口为 [SKILL.md](SKILL.md)。原工作区的 `work/project-design-skill` 已迁移，不再维护或重建。
 
-随迁移保留的 `reference-review.md`、`source-manifest.json` 和 `validation-results.json` 为历史维护记录；其中的哈希、行数及验证结果不代表本次同步后的状态，最新优化验证说明见 [VALIDATION.md](VALIDATION.md)。
+`reference-review.md` 记录参考原则的取舍；随迁移保留的 `source-manifest.json` 和 `validation-results.json` 是历史快照，其中哈希、行数及验证结果不代表当前状态。最新重构与验证说明见 [VALIDATION.md](VALIDATION.md)。
 
-面向研发管理者，从目标、现有方案或需求变化出发，按需完成价值可行性、方案概要、场景需求和交付分析。
+面向研发管理者，从新项目想法、已有实现或需求变化出发，按需探索需求、验证架构、设计模型，并形成可交付研发和测试的用户故事、验收条件与任务计划。
 
-本版增强通用分析主干，保留建模方法和技术方案的适配器机制。业务系统、开发工具、SDK、数据处理或跨系统项目按实际需要选择分析维度，不绑定某套元模型。
+四个主阶段可以独立进入、往返修订。业务系统、开发工具、SDK、数据处理或跨系统项目按实际需要选择分析维度，保留建模方法和技术方案的适配器机制，不绑定某套元模型。
+
+| 主阶段 | 主要结果 |
+|---|---|
+| [需求探索与澄清](references/stages/discovery.md) | 现状或需求概要、价值与范围、核心闭环、约束及验证问题 |
+| [技术架构探索与验证](references/stages/architecture.md) | 技术取舍、架构与关键链路、最小 demo 或已有验证证据及限制 |
+| [领域与数据模型探索设计](references/stages/modeling.md) | 本轮模型全视图、现状／目标差异、优化重构及演进方案 |
+| [需求细化与交付推进](references/stages/delivery.md) | 用户故事、可验证验收条件、研发测试任务、交付批次及实际结果 |
+
+全局先有概要，近期范围逐步深入。架构与模型可以往返，交付反馈可以修订需求和设计；不要求全项目设计完毕再开始交付。“可交付研发测试”和“已完成交付”分别判断，后者需要实现与验证证据。
 
 ## 职责划分
 
@@ -50,7 +59,14 @@
 SKILL.md
 references/
   entry/context.md              既有项目现状、材料缺口和继续分析
-  stages/                       目标、可行性、概要、细化、协作影响、交付
+  stages/discovery.md           第一阶段：需求探索与澄清
+  stages/architecture.md        第二阶段：技术架构探索与验证
+  stages/modeling.md            第三阶段：领域与数据模型探索设计
+  stages/delivery.md            第四阶段：需求细化与交付推进
+  stages/feasibility.md         第一阶段子方法：价值与可行性
+  stages/outline.md             第一阶段子方法：需求概要与范围
+  stages/detail.md              第四阶段子方法：用户故事与验收细化
+  stages/collaboration.md       跨阶段的协作影响分析
   changes/impact.md             任意阶段的变更分析
   selection/                    建模方法选择、技术选型
   adapters/                     应用选定的建模方法与技术方案
@@ -66,8 +82,10 @@ agents/openai.yaml               技能展示与调用信息
 
 这些是可组合的能力，不是每次必须走完的顺序：
 
-- 新项目只有目标，可以从目标与价值讨论开始。
-- 已有概要，可以直接细化近期要做的场景。
+- 新项目只有目标，可以从需求探索中的目标与价值讨论开始。
+- 已有概要，可以直接细化近期用户故事和验收条件。
+- 技术路径有关键未知，可以直接进入架构验证；明确要求 demo 时完成授权范围内的实现、运行与证据记录。
+- 只需理解模型或重构时，可以直接梳理现状、目标及演进路径。
 - 既有项目新增能力，先了解有关现状，再分析增量。
 - 修改已约定的需求，先定位变化及影响，再局部修订。
 - 选型和应用方案分开；建模方法和技术方案分别选择。
@@ -95,10 +113,12 @@ agents/openai.yaml               技能展示与调用信息
 
 旧的多技能入口改用根目录 SKILL.md。此前如果手动合并过本包的 AGENTS 片段，可移除该片段；保留项目自身规则。更新技能包不会自动修改其他项目的配置。
 
-已有项目需求、决策和交接文档仍可使用，不必重新生成。
+已有项目需求、决策和交接文档仍可使用，不必重新生成。旧的价值评估与方案概要归入第一阶段，旧的需求细化与交付规划归入第四阶段；原文件名与编号继续沿用，新架构及模型阶段按需要补充。
 
 ## 验证与来源
 
 检查范围见 [VALIDATION.md](VALIDATION.md)。格式与引用检查不代表真实访谈效果或第三方模型兼容性已验证。
 
-本包独立编写。此次深入参考 [ontology-driven-dev 的固定版本](https://github.com/sharptoolbox/ontology-driven-dev/tree/49a9eff8b17349adaa860b355e82e6154c35dc82) 中的需求探索规范、建模约束、合同需求与模型示例，并核对开发指导中的追溯设计。吸收明确职责、独立影响分析、确定性输入和双向一致性检查；不引入其专属模型、技术底座、固定 UI、每阶段硬暂停或报表数量要求。未复制上游源码、完整规范或模板。
+本包独立编写。历史参考见 [reference-review.md](reference-review.md)；本次按用户指定重新查阅 [AI 需求探索与确认提示词 V9.0](https://github.com/sharptoolbox/ontology-driven-dev/blob/main/references/AI需求探索与确认提示词V9.0.md) 的核心工作原则，吸收先草拟再澄清、区分依据与建议、分批处理关键问题及维护有效结论的方法。相关规则落在 [工作契约](references/shared/working-contract.md#对话与范围控制)，适用于四个阶段。
+
+未引入专属模型、单体同步限制、固定 UI、产物数量和逐阶段强制确认；没有依据时不强行推荐业务政策，有业务价值的交互要求予以保留。具体吸收与排除理由见 [参考取舍记录](reference-review.md)。

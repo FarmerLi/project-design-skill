@@ -36,21 +36,15 @@
 
 GitHub 仓库：[FarmerLi/project-design-skill](https://github.com/FarmerLi/project-design-skill)。技能名称为 `project-design`，安装目录也使用这个名称。
 
-将 [安装与更新指引](安装与更新.md) 交给 Agent 执行。该文档包含项目内安装、个人全局安装、版本校验、更新与恢复步骤，直接下载技能文件，无需 Git 子模块或克隆仓库。
+默认将下面的提示词交给 Agent，自动安装或更新最新正式 Release。版本由 Tag 标识，使用 GitHub 自动提供的完整源码包；安装不要求逐文件比对哈希，也无需 Git 子模块或克隆仓库。执行细节见 [安装与更新指引](安装与更新.md)。
 
-安装时可直接告诉 Agent：
-
-```text
-请读取 https://github.com/FarmerLi/project-design-skill 仓库中的《安装与更新.md》，按指引将 project-design 安装到当前项目，并完成安装校验。
-```
-
-更新时：
+安装或更新时：
 
 ```text
-请读取 https://github.com/FarmerLi/project-design-skill 仓库中的《安装与更新.md》，按指引将当前项目中的 project-design 更新到最新版本，保留更新前的备份并报告结果。
+请读取 https://github.com/FarmerLi/project-design-skill 仓库中的《安装与更新.md》，将 project-design 安装到当前项目；已有安装则更新到最新正式版。请按指引直接完成版本检查、必要的整包下载、备份替换和安装校验，并报告版本与安装位置。
 ```
 
-默认安装到当前项目的 `.agents/skills/project-design/`；需要个人全局安装时，在请求中明确说明。引入本技能无需修改项目的 `AGENTS.md`。
+默认安装到当前项目的 `.agents/skills/project-design/`；个人全局安装或固定 Tag 时，在请求中明确说明。尚无正式 Release 时，需要先发布，或明确要求安装默认分支的开发版。引入本技能无需修改项目的 `AGENTS.md`。
 
 ## 使用
 
@@ -158,3 +152,7 @@ agents/openai.yaml               技能展示与调用信息
 本包独立编写，方法参考包括 [AI 需求探索与确认提示词 V9.0](https://github.com/sharptoolbox/ontology-driven-dev/blob/main/references/AI需求探索与确认提示词V9.0.md)。当前 [工作契约](references/shared/working-contract.md#对话与范围控制) 保留先草拟再澄清、区分依据与建议、分批处理关键问题及维护有效结论的方法，适用于四个阶段；上游资料不作为本包的运行依赖。
 
 未引入专属模型、单体同步限制、固定 UI、产物数量和逐阶段强制确认；没有依据时不强行推荐业务政策，有业务价值的交互要求予以保留。
+
+## 开源协议
+
+本项目采用 [Apache License 2.0](LICENSE) 开源协议。

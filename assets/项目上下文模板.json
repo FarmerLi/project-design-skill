@@ -1,0 +1,23 @@
+{
+  "project": {
+    "name": null,
+    "repository": null,
+    "path_base": "."
+  },
+  "documents": {
+    "formal_root": "docs/project-analysis/",
+    "support_root": "docs/project-analysis-support/"
+  },
+  "tasks": {
+    "entry": null,
+    "mapping": null
+  },
+  "prototype": {
+    "tool": null,
+    "source": null
+  },
+  "handoff": {
+    "design": null,
+    "development": null
+  }
+}

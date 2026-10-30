@@ -5,8 +5,9 @@
     "path_base": "."
   },
   "documents": {
-    "formal_root": "docs/project-analysis/",
-    "support_root": "docs/project-analysis-support/"
+    "formal_root": null,
+    "support_root": null,
+    "organization": null
   },
   "tasks": {
     "entry": null,

@@ -26,7 +26,7 @@ flowchart LR
 | [需求探索与澄清](references/stages/discovery.md) | 目标、场景、能力、规则、范围与成功标准形成整体；按需做 [价值与可行性](references/stages/feasibility.md)、[概要与范围](references/stages/outline.md) |
 | [领域与数据模型](references/stages/modeling.md) | 概念语义、关系、规则承载与必要演进方案，配总览图和场景带读；物理设计结合技术选择完善 |
 | [技术架构与验证](references/stages/architecture.md) | 明确分层、组件、技术、接口与数据协作、设施和部署，配结构／运行／部署视图；局部比较或 demo 按请求范围交付 |
-| [原型与交互设计](references/stages/prototype-interaction.md) | 按项目上下文指定的工具制作可操作或可模拟执行的原型，实际走查需求和核心流程，修订阻塞缺口并形成交互、设计规范；局部流程按请求范围交付 |
+| [原型与交互设计](references/stages/prototype-interaction.md) | 先任务与信息结构、核心交互验证，再建立或复用公共交互／UI 基线，按场景细化并实际走查，修订阻塞缺口、收敛规范；使用指定原型工具，局部流程按请求范围交付 |
 | [需求细化与交付推进](references/stages/delivery.md) | 先决议本期需要建立故事的需求边界，再逐项拆分、细化故事、AC 与任务；完整交接逐故事达到研发测试可执行深度 |
 | [变更分析](references/changes/impact.md) | 比较有效基线与新结论，定位影响，修订相关主题及下游引用 |
 

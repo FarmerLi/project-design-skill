@@ -1,4 +1,4 @@
 interface:
   display_name: "项目需求与设计"
-  short_description: "按需探索需求、设计领域与数据模型、验证架构，用原型验证需求与流程并确定交互和设计规范，再形成用户故事和验收条件推进研发测试交付。"
+  short_description: "按需探索需求、模型与架构；先定范围及交互和 UI 规范，再总体与详细设计、原型验证，形成故事与验收条件。"
   default_prompt: "请用 $project-design 根据当前项目材料和我的请求，判断本轮需要的分析路径并推进。"

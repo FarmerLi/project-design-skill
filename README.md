@@ -26,11 +26,13 @@ flowchart LR
 | [需求探索与澄清](references/stages/discovery.md) | 目标、场景、能力、规则、范围与成功标准形成整体；按需做 [价值与可行性](references/stages/feasibility.md)、[概要与范围](references/stages/outline.md) |
 | [领域与数据模型](references/stages/modeling.md) | 概念语义、关系、规则承载与必要演进方案，配总览图和场景带读；物理设计结合技术选择完善 |
 | [技术架构与验证](references/stages/architecture.md) | 明确分层、组件、技术、接口与数据协作、设施和部署，配结构／运行／部署视图；局部比较或 demo 按请求范围交付 |
-| [原型与交互设计](references/stages/prototype-interaction.md) | 先任务与信息结构、核心交互验证，再建立或复用公共交互／UI 基线，按场景细化并实际走查，修订阻塞缺口、收敛规范；使用指定原型工具，局部流程按请求范围交付 |
+| [原型与交互设计](references/stages/prototype-interaction.md) | 先确定范围，建立或复用可约束详细设计的交互规范和 UI 规范，再总体设计、场景细化与原型验证，最后检查整体一致性并交接；使用指定原型工具，局部流程按请求范围复用已有依据 |
 | [需求细化与交付推进](references/stages/delivery.md) | 先决议本期需要建立故事的需求边界，再逐项拆分、细化故事、AC 与任务；完整交接逐故事达到研发测试可执行深度 |
 | [变更分析](references/changes/impact.md) | 比较有效基线与新结论，定位影响，修订相关主题及下游引用 |
 
 建模方法和技术方案分别选择，已定选择直接用于模型或架构设计，并作为原型与交互设计的业务与技术边界。按需使用 [建模选择](references/selection/modeling.md) 和 [技术选型](references/selection/technology.md)，不在每次需求讨论中重选方法。纯代码修复、部署操作和技能维护不启动业务分析流程。
+
+第四阶段的详细设计须引用并符合前置规范，例外与共性修订按 [规范约束](references/stages/prototype-interaction.md#规范约束) 处理；已有成果及非图形交互按本期范围复用，不补建整套设计系统。
 
 仅请求故事与 AC 时按细化标准结束；完整研发测试交接另判断必要原型、交互与设计规范及任务是否充分。本地每故事独立文档，任务系统为正式来源时在系统维护完整故事与关联任务，总览保留边界、批次及依赖。已有需求边界、稳定 ID 和实际任务直接复用，不预先固定故事数量，也不因新一轮讨论重建。
 

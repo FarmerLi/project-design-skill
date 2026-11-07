@@ -2,7 +2,7 @@
 
 > 历史维护预案，仅保留当时的范围、判断与验证设计；当前规则以 SKILL.md 及其引用为准。
 
-日期：2026-10-22。状态：已实施技能修改并完成本次静态与行为验证；实际结果见[修改验证记录](../../tests/records/第一阶段修改验证记录.md)。以下保留本次批准执行的修改范围与验收设计。
+日期：2026-10-22。状态：已实施技能修改并完成本次静态与行为验证；实际结果见[修改验证记录](../../tests/records/stage-1-validation.md)。以下保留本次批准执行的修改范围与验收设计。
 
 本预案针对 `project-design` 第一阶段“需求探索与澄清”的方法和产物质量。依据为 Product2Ontology 的三份指定文档、关联验证报告，以及技能源码中的阶段方法、工作契约和维护规则。产品材料仅作为问题证据，不作为技能的默认业务模型。
 
@@ -160,9 +160,9 @@
 | [document-maintenance.md](../../references/integrations/document-maintenance.md) | 在已有读写流程中加入“归并定义—更新正文—消解旧项—维护修订与影响—回读检查”，保留并发与保存核实要求 |
 | [impact.md](../../references/changes/impact.md) | 区分等价整理与语义变更；修订按主题记录范围，历史通过归档关联；保留真实的下游复核状态 |
 | [readiness.md](../../references/shared/readiness.md) | 增加独立可读、目标与能力关联、单一有效定义、术语归属及验证不越界的检查；按本轮深度使用 |
-| [design-input.md](../../references/shared/design-input.md) | 明确下游读取有效需求定义；样例和验证证据分别关联，不将其领域模型直接作为产品规范输入 |
+| [design-input.md](../../references/shared/design-traceability.md) | 明确下游读取有效需求定义；样例和验证证据分别关联，不将其领域模型直接作为产品规范输入 |
 | [analysis-slices.md](../../references/examples/analysis-slices.md) | 增加一个简短示例，展示输入如何形成需求、设计和验证材料；不把本项目专有术语写成通用模板 |
-| [行为验证.md](../../tests/行为验证.md) | 增加多轮整理、历史替代、样例隔离、范围区分和局部请求反例，按实际结果判定 |
+| [行为验证.md](../../tests/behavior-validation.md) | 增加多轮整理、历史替代、样例隔离、范围区分和局部请求反例，按实际结果判定 |
 
 不重构第二至第四阶段的方法、适配器体系或安装机制。共用规则修改后只检查相关引用和冲突。README 如复述了已改变的产物定义，再做对应同步；历史哈希快照 `source-manifest.json` 不冒充当前版本清单。
 

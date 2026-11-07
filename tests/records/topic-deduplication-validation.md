@@ -5,8 +5,8 @@
 ## 修改范围
 
 - [共用文档规范](../../references/shared/document-structure.md#主题边界与唯一维护位置) 增加主题分工、定义级权威位置、合并／拆分判断、定义与摘要／应用的区别，以及跨文档语义检查。可独立理解以正文和明确的必要引用为单位；保留组件自身责任及可判断的 AC。
-- [技能入口](../../SKILL.md)、[文档维护](../../references/integrations/document-maintenance.md)、[就绪检查](../../references/shared/readiness.md) 与 [故事细化](../../references/stages/detail.md) 接入共用规则；阅读评审同时检查相关相邻主题，避免单篇可读却跨文档重复。使用说明同步边界，不在各阶段复制整套去重规则。
-- [O-09～11 输入](../fixtures/文档组织输入夹具.md#o-09-多文档持续维护) 和 [行为判据](../行为验证.md#文档层次归属与材料清理) 覆盖多文档持续维护、不同视角与独立故事、同义定义夹杂未决冲突。
+- [技能入口](../../SKILL.md)、[文档维护](../../references/integrations/document-maintenance.md)、[就绪检查](../../references/shared/readiness.md) 与 [故事细化](../../references/stages/acceptance-detail.md) 接入共用规则；阅读评审同时检查相关相邻主题，避免单篇可读却跨文档重复。使用说明同步边界，不在各阶段复制整套去重规则。
+- [O-09～11 输入](../fixtures/document-organization-inputs.md#o-09-多文档持续维护) 和 [行为判据](../behavior-validation.md#文档层次归属与材料清理) 覆盖多文档持续维护、不同视角与独立故事、同义定义夹杂未决冲突。
 
 ## 实际执行方式与版本
 

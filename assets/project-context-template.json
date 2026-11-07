@@ -13,10 +13,6 @@
     "entry": null,
     "mapping": null
   },
-  "prototype": {
-    "tool": null,
-    "source": null
-  },
   "handoff": {
     "design": null,
     "development": null

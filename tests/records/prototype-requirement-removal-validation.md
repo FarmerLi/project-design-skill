@@ -5,9 +5,9 @@
 ## 修改范围
 
 - [第四阶段](../../references/stages/interaction.md)更名为“交互与 UI 设计”，以设计说明、流程／状态定义及规范引用承载成果，按场景核对设计。移除原型工具配置、可操作原型、源文件与预览、原型走查的必备要求；保留总体设计、两类规范、符合性检查及阻塞处理。
-- [交付推进](../../references/stages/delivery.md)、[故事细化](../../references/stages/detail.md)及[就绪检查](../../references/shared/readiness.md)同步交接条件：必要设计足以支撑实现和验收时，不因缺少原型阻塞交接；权限、状态、恢复或规范冲突仍需解决。
-- [项目上下文](../../references/shared/project-context.md)及[模板](../../assets/项目上下文模板.json)移除原型工具与源字段。已有配置仍按通用扩展字段保留规则处理，不迁移业务项目。
-- 同步技能入口、README、UI 元数据、跨阶段与共享规则及引用。[行为验证](../行为验证.md)调整 I-01～12、X-01 并新增 L-14，[原始输入](../fixtures/设计与交付整理输入夹具.md)同步。历史记录只更新改名文件的链接目标，保留当时结论；旧章节锚点保留兼容入口。
+- [交付推进](../../references/stages/issue-delivery.md)、[故事细化](../../references/stages/acceptance-detail.md)及[就绪检查](../../references/shared/readiness.md)同步交接条件：必要设计足以支撑实现和验收时，不因缺少原型阻塞交接；权限、状态、恢复或规范冲突仍需解决。
+- [项目上下文](../../references/shared/project-context.md)及[模板](../../assets/project-context-template.json)移除原型工具与源字段。已有配置仍按通用扩展字段保留规则处理，不迁移业务项目。
+- 同步技能入口、README、UI 元数据、跨阶段与共享规则及引用。[行为验证](../behavior-validation.md)调整 I-01～12、X-01 并新增 L-14，[原始输入](../fixtures/design-delivery-inputs.md)同步。历史记录只更新改名文件的链接目标，保留当时结论；旧章节锚点保留兼容入口。
 
 ## 实际检查
 

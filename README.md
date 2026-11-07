@@ -27,7 +27,7 @@ flowchart LR
 | [领域与数据模型](references/stages/modeling.md) | 概念语义、关系、规则承载与必要演进方案，配总览图和场景带读；物理设计结合技术选择完善 |
 | [技术架构与验证](references/stages/architecture.md) | 明确分层、组件、技术、接口与数据协作、设施和部署，配结构／运行／部署视图；局部比较或 demo 按请求范围交付 |
 | [交互与 UI 设计](references/stages/interaction.md) | 先确定范围，建立或复用可约束详细设计的交互规范和 UI 规范，再总体设计、场景细化与核对，最后检查整体一致性并交接；局部流程按请求范围复用已有依据，原型制作与走查不作为完成或交接条件 |
-| [交付范围确认与 Issue 拆分](references/stages/delivery.md) | 复用有效业务范围，按结果拆分执行 Issue 或项目等价任务；总览维护目标、范围、优先级依赖与索引，执行项达到研发测试可执行深度 |
+| [交付范围确认与 Issue 拆分](references/stages/issue-delivery.md) | 复用有效业务范围，按结果拆分执行 Issue 或项目等价任务；总览维护目标、范围、优先级依赖与索引，执行项达到研发测试可执行深度 |
 | [变更分析](references/changes/impact.md) | 比较有效基线与新结论，定位影响，修订相关主题及下游引用 |
 
 建模方法和技术方案分别选择，已定选择直接用于模型或架构设计，并作为交互与 UI 设计的业务与技术边界。按需使用 [建模选择](references/selection/modeling.md) 和 [技术选型](references/selection/technology.md)，不在每次需求讨论中重选方法。纯代码修复、部署操作和技能维护不启动业务分析流程。
@@ -72,17 +72,17 @@ $project-design 帮我分析当前项目。本轮先澄清目标和首期范围�
 
 交付前由独立上下文的子 Agent 阅读评审：不继承主会话和编写经过，只基于当前正文及必要规范引用判断能否独立理解。主 Agent 处理意见并按需复评，评审记录保存在辅助验证区；自检不替代独立评审，工具不可用时如实标记未完成。具体见 [阅读评审规则](references/shared/document-structure.md#交付前的阅读检查)。
 
-持续分析与 `coder-assistant` 共用项目根目录的英文隐藏文件 `.project-context.json`；记录项目、文档入口与组织约定、任务及设计／开发交接入口，业务正文、进展和测试证据留在对应文档中。首次按 [JSON 模板](assets/项目上下文模板.json) 补充本次必需信息，模板不预填文档路径，已有等价配置优先复用；远端可在已授权页面保存同组 JSON，不要求本地仓库或正文镜像。临时咨询不强制建档，配置不保存凭据。字段和双向交接方式见 [项目上下文](references/shared/project-context.md)。
+持续分析与 `coder-assistant` 共用项目根目录的英文隐藏文件 `.project-context.json`；记录项目、文档入口与组织约定、任务及设计／开发交接入口，业务正文、进展和测试证据留在对应文档中。首次按 [JSON 模板](assets/project-context-template.json) 补充本次必需信息，模板不预填文档路径，已有等价配置优先复用；远端可在已授权页面保存同组 JSON，不要求本地仓库或正文镜像。临时咨询不强制建档，配置不保存凭据。字段和双向交接方式见 [项目上下文](references/shared/project-context.md)。
 
 ## 安装与更新
 
 仓库：[FarmerLi/project-design-skill](https://github.com/FarmerLi/project-design-skill)。技能名称和安装目录名均为 `project-design`。将下面提示词交给 Agent：
 
 ```text
-请读取 https://github.com/FarmerLi/project-design-skill 仓库中的《安装与更新.md》，将 project-design 安装到当前项目；已有安装则更新到最新正式版。请按指引直接完成版本检查、必要的整包下载、备份替换和安装校验，并报告版本与安装位置。
+请读取 https://github.com/FarmerLi/project-design-skill 仓库中的《installation.md》，将 project-design 安装到当前项目；已有安装则更新到最新正式版。请按指引直接完成版本检查、必要的整包下载、备份替换和安装校验，并报告版本与安装位置。
 ```
 
-默认安装到目标项目 `.agents/skills/project-design/`，引入时无需修改项目 `AGENTS.md`；个人全局、固定 Tag 或开发分支按实际请求选择。完整流程见 [安装与更新](安装与更新.md)，不在本文重复安装规则。
+默认安装到目标项目 `.agents/skills/project-design/`，引入时无需修改项目 `AGENTS.md`；个人全局、固定 Tag 或开发分支按实际请求选择。完整流程见 [安装与更新](installation.md)，不在本文重复安装规则。
 
 旧阶段文件和编号按内容及有效版本复用，升级不自动迁移所有项目。恢复时从项目配置定位概览、独立交接及相关有效材料，核对版本后继续；过期交接不能覆盖更新后的定义。方法见 [现状与恢复](references/entry/context.md)。
 
@@ -99,8 +99,16 @@ $project-design 帮我分析当前项目。本轮先澄清目标和首期范围�
 | `tests/` | 行为判据；`fixtures/` 保存输入，`records/` 保存实际验证记录，不作运行依赖 |
 | `maintenance/archive/` | 已完成修改预案及历史文件快照，不作为当前规则或安装清单 |
 
+实际委派按[子代理协作](references/shared/agent-collaboration.md)区分勘察、设计切片与独立阅读；Issue 层级不决定代理数量，依赖就绪与写入隔离决定能否并行。
+
 公共规则在对应 reference 维护，阶段方法只写本能力差异及必要引用；不要将后续修复逐条叠加到入口或复制到所有文件。大型专题是否拆分取决于阅读及维护责任，不按统一字数或层数规定。
 
-维护时校验技能格式、元数据、Markdown 文件引用与锚点，再按 [行为验证](tests/行为验证.md) 核对受影响场景和相邻反例。格式、规则推演、隔离执行、图语法与视觉检查分别报告，未执行的行为测试不能称为通过。历史记录不证明新规则已验证，[历史哈希快照](maintenance/archive/历史文件哈希快照.json) 也不代表当前文件清单。
+维护时校验技能格式、元数据、Markdown 文件引用与锚点，再按 [行为验证](tests/behavior-validation.md) 核对受影响场景和相邻反例。格式、规则推演、隔离执行、图语法与视觉检查分别报告，未执行的行为测试不能称为通过。历史记录不证明新规则已验证，[历史哈希快照](maintenance/archive/historical-file-hashes.json) 也不代表当前文件清单。
 
 本项目采用 [Apache License 2.0](LICENSE)。
+
+## 技能文档命名
+
+技能包的当前文档、模板及验证说明使用英文 kebab-case 文件名，标题和正文使用中文；保留 `SKILL.md`、`README.md` 等固定入口和工具约定文件名。名称表达本篇实际职责，方法、输入夹具和验证记录分别命名，目录提供的上下文不在文件名重复堆叠。业务跨边界分析与 agent 协作分别维护，交付拆分与行为验收细化分别提供入口。改名同步引用、安装指南及模板；不留两份完整方法。
+
+此规则仅适用于技能包，不改变项目产物沿项目约定命名的规则。历史记录改名只更新现行导航，旧日期、阶段语义与执行结果保留；冻结的原始证据和哈希快照内容仍标识原版本，不为符合当前名称重写历史。

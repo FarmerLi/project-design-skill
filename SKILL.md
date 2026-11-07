@@ -18,7 +18,7 @@ description: 将项目想法、现有实现或变更请求转为需求概要、�
 | 概念、关系、数据、模型优化与重构 | [第二阶段：领域与数据模型](references/stages/modeling.md) |
 | 技术选型、系统／组件设计、关键技术 demo | [第三阶段：技术架构探索与验证](references/stages/architecture.md)；仅比较或验证局部时不补全系统设计 |
 | 页面、流程、信息架构或交互／UI 设计规范 | [第四阶段：交互与 UI 设计](references/stages/interaction.md)；局部请求按实际范围细化交互与 UI 设计，不强制补全整套产品界面 |
-| 故事、AC、研发测试任务或交付跟进 | [第五阶段：交付范围确认与 Issue 拆分](references/stages/delivery.md)；先明确本期业务范围，再按交付结果拆分 Issue 或项目等价任务 |
+| 故事、AC、研发测试任务或交付跟进 | [第五阶段：交付范围确认与 Issue 拆分](references/stages/issue-delivery.md)；先明确本期业务范围，再按交付结果拆分 Issue 或项目等价任务 |
 | 修改有效结论、影响分析 | [变更分析](references/changes/impact.md)，沿引用处理受影响部分 |
 | 继续分析 | 按 [项目配置](references/shared/project-context.md) 定位概览、辅助交接及有效决策，核对后恢复指定任务 |
 
@@ -40,6 +40,10 @@ description: 将项目想法、现有实现或变更请求转为需求概要、�
 
 仅请求故事与 AC 时按细化标准结束，不以交互、架构或任务齐全为前提；完整研发测试交接按第五阶段标准执行。简单需求可直接进入执行 Issue；复杂目标用父 Issue 组织 sub-issue、范围覆盖与整体验收，按需保留场景总览；长期业务规则、场景和设计决策在需求与设计正文维护。沿用项目任务系统或本地等价来源，不强制独立故事、分设 DEV／TEST 或固定拆分数量；已有有效范围及授权直接复用。
 
+## 按需使用子 agent
+
+主 agent 保留范围取舍、共享定义与整合判断；实际委派前按[子代理启用与任务分配](references/shared/agent-collaboration.md)选择有边界的勘察、设计切片或独立阅读。父子 Issue 不与 agent 一一对应，依赖未就绪的子项不并行启动，同一工作区保持单写者。交付前独立阅读继续按下述文档规则执行。
+
 ## 将材料变成当前文档
 
 所有阶段、组件专题和流程专题共同遵循 [文档结构、归属与材料管理](references/shared/document-structure.md)。新建或整理文档时读取；后续局部更新复用已掌握的规则。
@@ -55,9 +59,9 @@ description: 将项目想法、现有实现或变更请求转为需求概要、�
 
 讨论先说明目标、待讨论项和当前重点，沿依赖逐项收敛；具体见 [对话与范围控制](references/shared/working-contract.md#对话与范围控制)。不以讨论议程组织正式正文。
 
-区分来源（明确要求、文档、现状观察、推测）、选择状态与验证状态。明确要求和委托选择沿用授权，无须形式确认；沉默不代表确认。共享规则维护一处规范定义，设计引用需求，不为迎合模型或技术默认值删改业务。规格深度见 [通用分析规格](references/shared/analysis-spec.md)，跨边界行为按 [协作与影响链](references/stages/collaboration.md) 检查失败与反向后果。
+区分来源（明确要求、文档、现状观察、推测）、选择状态与验证状态。明确要求和委托选择沿用授权，无须形式确认；沉默不代表确认。共享规则维护一处规范定义，设计引用需求，不为迎合模型或技术默认值删改业务。规格深度见 [通用分析规格](references/shared/analysis-spec.md)，跨边界行为按 [协作与影响链](references/shared/cross-boundary-analysis.md) 检查失败与反向后果。
 
-已确定变化整合到所属主题；尚在讨论的候选不覆盖有效基线。按 [工作与交接契约](references/shared/working-contract.md) 维护版本、状态与恢复信息，不按对话次数升版；受影响且未复核的下游保留真实输入并标为“需复核”。用 [设计输入与追溯](references/shared/design-input.md) 连接需求、设计、故事、AC、任务及证据，按 [就绪检查](references/shared/readiness.md) 分别判断文档完成、业务确认、设计可用、运行验证与实际交付。
+已确定变化整合到所属主题；尚在讨论的候选不覆盖有效基线。按 [工作与交接契约](references/shared/working-contract.md) 维护版本、状态与恢复信息，不按对话次数升版；受影响且未复核的下游保留真实输入并标为“需复核”。用 [设计输入与追溯](references/shared/design-traceability.md) 连接需求、设计、故事、AC、任务及证据，按 [就绪检查](references/shared/readiness.md) 分别判断文档完成、业务确认、设计可用、运行验证与实际交付。
 
 验证反馈到相关需求、模型、架构、交互或计划，不只追加风险。分析请求本身不授权应用开发、部署、采购、发消息或无关配置变更；明确 demo 请求所需的常规可逆工作可在授权范围完成。工具失败或证据不足如实说明，不伪报验证、实现、运行或写入完成。
 
@@ -75,6 +79,6 @@ description: 将项目想法、现有实现或变更请求转为需求概要、�
 
 | 材料 | 何时读取 |
 |---|---|
-| [用户故事与验收细化](references/stages/detail.md) | 需要细化 Issue 或复杂故事的行为、规则与验收时读取 |
+| [行为与验收细化](references/stages/acceptance-detail.md) | 需要细化 Issue 或复杂故事的行为、规则与验收时读取 |
 | [分析切片示例](references/examples/analysis-slices.md) | 校准跨系统、统计、输入整理和正文归属的深度；示例不构成项目事实 |
-| [项目交付配置模板](assets/项目上下文模板.json) | 缺少配置且需要持续维护时使用，不为临时咨询生成 |
+| [项目交付配置模板](assets/project-context-template.json) | 缺少配置且需要持续维护时使用，不为临时咨询生成 |

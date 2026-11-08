@@ -1,20 +1,9 @@
 {
   "project": {
     "name": null,
-    "repository": null,
     "path_base": "."
   },
   "documents": {
-    "formal_root": null,
-    "support_root": null,
-    "organization": null
-  },
-  "tasks": {
-    "entry": null,
-    "mapping": null
-  },
-  "handoff": {
-    "design": null,
-    "development": null
+    "formal_root": null
   }
 }

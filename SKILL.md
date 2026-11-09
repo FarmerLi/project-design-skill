@@ -26,7 +26,7 @@ description: 按当前问题开展需求澄清、领域与数据建模、技术�
 | 概念、关系、状态、数据或模型演进 | [领域与数据模型](references/stages/modeling.md) |
 | 实现机制、技术比较、组件协作或关键 demo | [技术架构与验证](references/stages/architecture.md) |
 | 用户任务、页面、反馈与恢复 | [交互与 UI 设计](references/stages/interaction.md) |
-| 首批工作、故事、验收或执行任务 | [交付切片与任务](references/stages/issue-delivery.md)，按需使用 [行为与验收细化](references/stages/acceptance-detail.md) |
+| 首批工作、故事、验收或执行任务 | 先定位项目已有Issue规范，再按[交付切片与任务](references/stages/issue-delivery.md)，按需使用 [行为与验收细化](references/stages/acceptance-detail.md) |
 | 已有结论发生变化 | [变更分析](references/changes/impact.md) |
 | 入口不明、了解现状或恢复工作 | [现状与恢复](references/entry/context.md) |
 

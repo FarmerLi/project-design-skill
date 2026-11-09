@@ -18,6 +18,7 @@
 | `documents.formal_root` | 当前需求和设计入口，本地路径或远端 URL／ID |
 | `documents.support_root` | 已有辅助材料入口；没有独立辅助区可省略 |
 | `documents.organization` | 必要的现有组织约定，简述或引用规范；缺少此键不影响现有配置使用 |
+| `standards`（可选） | 项目已有规范入口映射，包括Issue规范；键名沿项目约定，按当前任务选读，缺少时沿项目指令定位，不要求补建 |
 | `tasks.entry`、`tasks.mapping` | 任务入口与已有映射；关系可直接在任务中表达，无需单独映射表 |
 | `handoff.design`、`handoff.development` | 确有交接时的入口，可指向同一文件／任务或不同章节 |
 
